@@ -1,0 +1,45 @@
+body{
+    background-color: #FBF7FF;
+    color:black;
+
+}
+
+h1{
+    font:bold;
+}
+
+table{
+    margin:auto;
+    font-family:"Times New Roman", Times, serif;
+    padding-top: 10px;
+    padding-bottom: 50px;
+
+
+}
+
+#editSubmit{
+    display: none;
+}
+
+.icon{
+    position: relative;
+    width: 8%;
+    height: 8%;
+    padding: 20px;
+}
+
+#add,#remove, #list, #edit{
+    margin:auto;
+    width: 330px;
+}
+h5{
+    font-style:italic;
+    color: grey;
+}
+
+#studentAdd, #sectionAdd, #teacherAdd, #fillerAdd, #add, #remove, #list, #edit, #studentRemove, #teacherRemove, #sectionRemove, #removeButton {
+    display:none;
+    margin:auto;
+}
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> "School Organizer"</title>
+    <script src="script.js"></script>
+    <script src="object.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body onload="createHTMLstuff()"><center>
+    <h5> BY JAKE GREENBERG-BELL</h5>
+    <h1> SCHOOL MANAGEMENT SYSTEM</h1>
+    <img src="img/add.png" id="addImage" onclick="changeToAdd()" class="icon">
+    <img src="img/remove.png" id="removeImage" onclick="changeToRemove()" class="icon">
+    <img src="img/list.png" id="listImage" onclick="changeToList()" class="icon">
+    <img src="img/edit.png" id="editImage" onclick="changeToEdit(); populateEditInfo()" class="icon">
+
+
+    <table id="add">
+        <tr>
+            <th> Add a student, teacher, or section</th>
+            <td><select id="addSomething" onchange="populateAddInfo()">
+                    <option value="filler">---</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="section">Section</option>
+            </select></td></table>
+
+            <div id="fillerAdd"></div>
+            <div id="studentAdd">
+            <table>
+                <tr>
+                    <th>First Name: <input type="text" id="newStudentFirstName"></th>
+                    <th>Last Name: <input type="text" id="newStudentLastName"></th>
+                    <th> Grade<select id="newStudentGrade">
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                </select></th>
+                    <th><button id="submitStudentInfo" onclick="addObject()">Add!</button></th>
+                </tr>
+            </table></div>
+
+
+            <div id="teacherAdd">
+            <table>
+                <tr>
+                    <th>First Name: <input type="text" id="newTeacherFirstName"></th>
+                    <th>Last Name: <input type="text" id="newTeacherLastName"></th>
+                    <th> Subject: <input type="text" id="newTeacherSubject"></th>
+                    <th><button id="submitTeacherInfo" onclick="addObject()">Add!</button></th>
+                </tr></table></div>
+
+             <table id="sectionAdd">
+                 <tr>
+                     <th>Section Name: <input type="text" id="newSectionName"></th>
+                    <th>Max Size: <input type="number" min="1" id="newSectionMaxSize"></th>
+                    <th> Teacher: <select type="text" id="newSectionTeacher">
+
+                    </select></th>
+                    <th><button id="submitSectionInfo" onclick="addObject()">Add!</button></th>
+                </tr>
+            </table>
+
+        </tr>
+
+        <table id="remove">
+            <tr>
+                <th>Remove a student, teacher, or section</th>
+                <th><select id="removeSomething" onchange="populateRemoveInfo()">
+                    <option value="filler">---</option>
+                    <option id="remStud" value="remStud">Student</option>
+                    <option id="remTeach" value="remTeach">Teacher</option>
+                    <option id="remSect" value="remSect">Section</option>
+                </select></th>
+            </tr>
+        </table>
+
+        <div id="studentRemove">
+            <select id="removeStudent"></select>
+            <button id="removeButton" onclick="removeObject()">Remove!</button>
+        </div>
+        <div id ="teacherRemove">
+            <select id="removeTeacher"></select>
+            <button id="removeButton1" onclick="removeObject()">Remove!</button>
+        </div>
+        <div id = "sectionRemove">
+            <select id="removeSection"></select>
+            <button id="removeButton2" onclick="removeObject()">Remove!</button>
+        </div>
+
+        <table id="list">
+            <tr>
+                <th>List the students, teachers, or sections</th>
+                <th><select id="listOption">
+                    <option value="filler">---</option>
+                    <option value="stud">Students</option>
+                    <option value="teach">Teachers</option>
+                    <option value="sect">Sections</option>
+                </select></th>
+
+            <th><button id="listIt" onclick="listEm()">List!</button></th>
+            </tr>
+        </table>
+
+        <table id="edit" onload="populateEditInfo()">
+            <tr>
+                <th><select id="editSomething" onchange="addStudentEdit()">
+                    <option value="filler">Section to edit</option>
+                </select></th>
+                <th><select id="editAddStud" onchange="editAddRemove()">
+                    <option value="filler">Student to edit</option>
+                </select></th>
+                <th><select id="addOrRemoveSelectedStud">
+                    <option value="filler">Add or remove</option>
+                </select></th>
+                <th><button id="editSubmit" onclick="editInfoSubmit()">Submit</button></th>
+
+            </tr>
+
+
+        </table>
+
+    <div id="message" class="message"></div>
+
+</center></body>
+</html>
+
+
