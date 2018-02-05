@@ -135,6 +135,7 @@ function populateAddInfo(){
                 sectionAdd.style.display = "none";
             }
             var newTeacherSelectBox = document.getElementById("newSectionTeacher");
+            newTeacherSelectBox.innerHTML = "";
             for(var i = 0; i < teacherObjects.length; i++){
                 newTeacherSelectBox.innerHTML += "<option value='" + i + "'>" + teacherObjects[i].firstName + " " + teacherObjects[i].lastName+"</option>";
             }
