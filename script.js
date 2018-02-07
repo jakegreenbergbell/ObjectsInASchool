@@ -281,9 +281,9 @@ function listEm(){
         case "sect":
             message.innerHTML= "";
             for(var i = 0; i < sectionObjects.length; i ++){
-                message.innerHTML += (i + 1) + ". " + sectionObjects[i].name + "  " + sectionObjects[i].teacher.firstName + "  ";
+                message.innerHTML += (i + 1) + ". " + sectionObjects[i].name + "  " + sectionObjects[i].teacher.firstName + "  : ";
                 for(var x = 0; x < sectionObjects[i].students.length; x++) {
-                        message.innerHTML += sectionObjects[i].students[x].firstName + sectionObjects[i].students[x].lastName;
+                        message.innerHTML += sectionObjects[i].students[x].firstName + "  " +  sectionObjects[i].students[x].lastName + ", ";
                 }
                 message.innerHTML += "<br>";
             }
